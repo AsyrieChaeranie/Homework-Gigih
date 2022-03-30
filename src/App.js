@@ -1,25 +1,86 @@
 import logo from './logo.svg';
+import data from './data/all-sample';
 import './App.css';
+import {Component} from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    accessToken: window.location.hash
+      .substring(1, window.location.hash.length - 1)
+      .split("&")[0]
+      .split("=")[1],
+    search: "",
+    data: [],
+  };
+
+  handleLogin = () => {
+    window.open(
+      `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&redirect_uri=http://localhost:3000/`
+    );
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      search: e.target.value,
+    });
+  };
+
+  handleSearch = () => {
+    fetch(
+      "https://api.spotify.com/v1/search?q=" +
+        this.state.search +
+        "&access_token=" +
+        this.state.accessToken +
+        "&type=track"
+    )
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          data: data.tracks.items,
+        });
+      });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        {this.state.accessToken ? (
+          <>
+            <h1>Search your Song</h1>
+            <input onChange={this.handleChange} />
+            <button onClick={this.handleSearch}>Cari</button>
+
+            <div>{this.state.data.map((item) => item.name)}</div>
+          </>
+        ) : (
+          <button onClick={this.handleLogin}>Login</button>
+        )}
+      </div>
+    );
+  }
 }
+    // console.log(this.state.accessToken)
+    // return (
+    //     <section>
+    //       <div className="container">
+    //         {/* {data.map((x) => {
+    //           return <AlbumItem key={x.album.id} image={x.album.images[0].url} title={x.album.name} artist={x.artists[0].name} />;
+    //         })} */}
+    //         {this.state.accessToken ? (
+    //           <>
+    //             <input onChange={this.handleChange} />
+    //             <button onClick={this.handleSearch}>Cari</button>
+    
+    //             <div>{this.state.data.map((item) => item.name)}</div>
+    //           </>
+    //         ) : (
+    //           <button onClick={this.handleLogin}>Login</button>
+    //         )}
+    //       </div>
+    //     </section>
+    //   );
+//   }
+// }
 
 export default App;
