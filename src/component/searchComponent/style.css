@@ -1,0 +1,23 @@
+.search button{
+    color: white;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 7px 5px;
+    border-radius: 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    max-width: 50%;
+    background-color: saddlebrown;
+    box-shadow: 2px 2px 0 rgb(255, 255, 255);
+   }
+  
+   .search input{
+    padding: 10px;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border-color: khaki;
+   }

@@ -1,0 +1,73 @@
+.Album-wrapper{
+    /* text-align: center; */
+    float: left;
+    margin: 10px 20px;
+    width: 250px;
+    height: 420px;
+    background-color:khaki;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px  cornsilk;
+    transition: ease-out 1s;
+}
+
+.Album-description{
+    margin: 7px 0px;
+}
+
+.Album-image img{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+}
+
+p{
+    color:saddlebrown;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.Album-name{
+    font-size: 10px;
+}
+
+.Album-title{
+    padding: 5px 0px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 1300px) {
+    .Album-title{
+        font-size: 10px;
+    }
+    
+}
+
+.Album-artist{
+    font-size: 5px;
+}
+
+.Album-button{
+    color: white;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 7px 5px;
+    border-radius: 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    max-width: 50%;
+    background-color: saddlebrown;
+    box-shadow: 2px 2px 0 rgb(255, 255, 255);
+}
+
+.Album-button:active{
+    position: relative;
+    top: 2px;
+    box-shadow: none;
+}
+
+.Album-button:hover{
+    background-color:rgb(240, 216, 140);
+}
