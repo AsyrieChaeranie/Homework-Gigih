@@ -1,38 +1,238 @@
-.App {
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: khaki;
+  box-sizing: border-box;
+  text-align: center;
+}
+.h1{
+  color: black;
+}
+.h1,h2,label{
+  color: white;
+}
+.aci{
+  color: saddlebrown;
+}
+.profile img{
+  border: 1px solid white;
+  border-radius: 25px;
+  margin: 20px;
+  background-color: black;
+  width: 5%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.profile p{
+  padding-top: 60px;
+  font-size: 20px;
+}
+.profileform {
+  text-align: center;
+  border: 1px solid khaki;
+  border-radius: 10px;
+  background-color: black;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  color : white;
+    
+}
+
+.playlistform {
+  text-align: center;
+  border: 1px solid khaki;
+  text-align: center;
+  background-color: black;
+  margin-top: px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.searchform {
+  text-align: center;
+  border: 1px solid khaki;
+  text-align: center;
+  background-color: black;
+  margin-top: px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+}
+
+.playlistform textarea {
+  width: 300px;
+  height: 150px;
+  margin: 15px 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+input {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 16px;
+  width: 300px;
+  background-color: white;
+}
+
+button {
+  background-color: saddlebrown; 
+  border: none;
+  color: white;
+  padding: 15px;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 150px;
+  margin: 10px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer
+}
+
+button:hover {
+  background-color: khaki;
+  color: black;
+  border: 2px solid sa;
+}
+
+.logincard {
+  border: 1px solid khaki;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 150px;
+  background-color: white;
+}
+
+
+.searchcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchcard img{
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardsong {
+  background-color: khaki;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 92px;
+  border: 1px solid khaki;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  margin-left: 150px; 
+  margin-right: 150px;
+}
+.cardsong h2{
+  color: black;
+}
+.containersong {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.titlesong {
+  font-size: 10px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@media screen and (max-width: 600px) {
+  .h1{
+    color: black;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  .h1,h2,label{
+    color: white;
+    text-align: center;
   }
+  
+  .logincard {
+    border: 1px solid khaki;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-right: 50px;
+    margin-left: 50px;
+    background-color: white;
+  }
+
+  .searchcard {
+    flex-direction:column;
+    font-size: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .searchcard img{
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    justify-items:end;
+  
+  }
+
+  .cardsong {
+    background-color: khaki;
+    display: flex;
+    grid-gap: 5px;
+    border: 1px solid khaki;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    margin-left: 10px; 
+    margin-right: 10px;
+  }
+
+  .cardsong h2,h3,h1{
+    color: black;
+    text-align: center;
+  }
+
 }
+
