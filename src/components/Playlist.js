@@ -1,3 +1,8 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
+
+
 const Playlist = ({ hanldeAddPlaylist, handleAddSubmit, addPlaylistData }) => {
     return (
         <div className="playlistform">
@@ -10,7 +15,9 @@ const Playlist = ({ hanldeAddPlaylist, handleAddSubmit, addPlaylistData }) => {
                 <label> Description </label><br />
                 <textarea id="description" type="text" value={addPlaylistData.description} onChange={hanldeAddPlaylist} name="description" />
                 <br />
-                <button className="selectButton" type="submit" value="Submit" onclick="alert('Your playlist has been saved!')">Save</button>
+                <Button type="submit" value="Submit" variant="contained" color="primary" startIcon={<SaveAltIcon />}> Save </Button>
+                <br></br>
+                <br></br>
             </form>
         </div>
     )

@@ -1,3 +1,18 @@
+import Button from '@mui/material/Button';
+
+export type Tracks = {
+    imgSrc: string,
+    title: string,
+    artists: Array<{
+        name: string,
+        id: string,
+    }>,
+    album: string,
+    uri: string,
+    handleSelectTrack: (uri: string) => void,
+    isSelected: boolean,
+}
+
 const SongCard = ({imgSrc, title, artists,releasedate, album, Selected, handleSelect, uri }) => {
     return (
     <div className="cardsong">

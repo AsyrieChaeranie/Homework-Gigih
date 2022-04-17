@@ -4,6 +4,7 @@ import { setUserDisplayName } from "../Data/redux/userSlice"
 import { setImgSrc } from "../Data/redux/userSlice"
 import axios from "axios"
 import { useEffect } from "react"
+import { fetchUserData } from "../../api-call/fetchUserData";
 
 const Profile = () => {
     const accessToken = useSelector((state) => state.accessToken.value);

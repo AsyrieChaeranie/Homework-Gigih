@@ -5,6 +5,11 @@ import Playlist from '../components/Playlist';
 import Songs from '../components/tracksindex';
 import SearchForm from '../components/Search';
 import Profile from './Profile';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Button from '@mui/material/Button';
+import { fetchTracksData } from '../../api-call/fetchTracksData';
+import { addPlaylistData } from '../../api-call/addPlaylistData';
+import { addItemToPlaylist } from '../../api-call/addItemToPlaylist';
 
 
 
@@ -121,7 +126,7 @@ const CreatePlaylist = () => {
             <h1>Create your Playlist</h1>
             <div className='profileform'>
                 <Profile/>
-                <button onClick={handlekeluar}>LogOut</button>
+                <Button  onClick={handlekeluar} size="large" variant="contained" color="secondary" startIcon={<LogoutIcon />}> Log Out </Button>
             </div>
 
             <Playlist
